@@ -58,6 +58,13 @@
     background-color: #b3e0ff;
 }
 
+.todo-task > input {
+    float: right;
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+}
+
 .todo-task > todo-task-title {
     font-weight: bold;
 }

@@ -14,20 +14,32 @@
         <input type="text" class="todo-display-block todo-max-width todo-margin-vertical todo-height-default" placeholder="Search For Tasks" />
         <div class="todo-row">
             <div class="todo-tasklist">
-                <div class="todo-task todo-box-bordered">
+                <div class="todo-task todo-box-bordered" data-task-id="1">
                     <todo-task-title>title1</todo-task-title>
+                    <input type="button" value="X" onclick="del(this)" />
+                    <input type="button" value="..." onclick="edit(this)" />
+                    <input type="checkbox" onclick="check(this)" />
                     <todo-task-description>description1</todo-task-description>
                 </div>
-                <div class="todo-task todo-box-bordered">
+                <div class="todo-task todo-box-bordered" data-task-id="2">
                     <todo-task-title>title2</todo-task-title>
+                    <input type="button" value="X" onclick="del(this)" />
+                    <input type="button" value="..." onclick="edit(this)" />
+                    <input type="checkbox" onclick="check(this)" />
                     <todo-task-description>description2</todo-task-description>
                 </div>
-                <div class="todo-task todo-box-bordered todo-task-done">
+                <div class="todo-task todo-box-bordered todo-task-done" data-task-id="3">
                     <todo-task-title>title3</todo-task-title>
+                    <input type="button" value="X" onclick="del(this)" />
+                    <input type="button" value="..." onclick="edit(this)" />
+                    <input type="checkbox" onclick="check(this)" />
                     <todo-task-description>description3</todo-task-description>
                 </div>
-                <div class="todo-task todo-box-bordered">
+                <div class="todo-task todo-box-bordered" data-task-id="4">
                     <todo-task-title>title4</todo-task-title>
+                    <input type="button" value="X" onclick="del(this)" />
+                    <input type="button" value="..." onclick="edit(this)" />
+                    <input type="checkbox" onclick="check(this)" />
                     <todo-task-description>description4</todo-task-description>
                 </div>
             </div>
