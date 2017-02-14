@@ -44,10 +44,35 @@
     width: 70%;
 }
 
-.todo-filterbox {
-    width: 30%;
+.todo-sidebar {
+    width: 25%;
+    position: relative;
+    float: right;
 }
 
 .todo-button-default {
 
+}
+
+.todo-task {
+    background-color: #b3e0ff;
+}
+
+.todo-task > todo-task-title {
+    font-weight: bold;
+}
+
+.todo-task > todo-task-description {
+    display: block;
+}
+
+.todo-box-bordered {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.todo-task-done{
+    background-color: #e6e6e6;
 }

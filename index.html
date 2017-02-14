@@ -11,17 +11,34 @@
     <div class="todo-container">
         <h1 class="todo-centered">To Do List</h1>
         <h3>All Task</h3>
-        <input type="button" class="todo-button-default todo-display-block todo-margin-vertical todo-height-default" value="Add New" />
         <input type="text" class="todo-display-block todo-max-width todo-margin-vertical todo-height-default" placeholder="Search For Tasks" />
         <div class="todo-row">
             <div class="todo-tasklist">
-                <h1>Hello World</h1>
-                <h1>Hello World</h1>
-                <h1>Hello World</h1>
+                <div class="todo-task todo-box-bordered">
+                    <todo-task-title>title1</todo-task-title>
+                    <todo-task-description>description1</todo-task-description>
+                </div>
+                <div class="todo-task todo-box-bordered">
+                    <todo-task-title>title2</todo-task-title>
+                    <todo-task-description>description2</todo-task-description>
+                </div>
+                <div class="todo-task todo-box-bordered todo-task-done">
+                    <todo-task-title>title3</todo-task-title>
+                    <todo-task-description>description3</todo-task-description>
+                </div>
+                <div class="todo-task todo-box-bordered">
+                    <todo-task-title>title4</todo-task-title>
+                    <todo-task-description>description4</todo-task-description>
+                </div>
             </div>
-            <aside class="todo-filterbox">
-                <h1>Hello World</h1>
-                <h1>Hello World</h1>
+            <aside class="todo-sidebar todo-box-bordered">
+                <input type="button" class="todo-button-default todo-display-block todo-margin-vertical todo-height-default" value="New Task" />
+                <h4>Filter List</h4>
+                <form name="filterform" class="todo-radiofilter">
+                    <input type="radio" name="filter" value="all" checked> All<br />
+                    <input type="radio" name="filter" value="pending"> Pending<br />
+                    <input type="radio" name="filter" value="done"> Done<br />
+                </form>
             </aside>
         </div>
     </div>
