@@ -1,0 +1,53 @@
+﻿.todo-container {
+    width: 95%;
+    max-width: 600px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.todo-centered{
+    text-align: center;
+}
+
+.todo-row {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.todo-row > * {
+    display: inline;
+    height: 100%;
+    float: left;
+}
+
+.todo-height-default {
+    height: 30px;
+}
+
+.todo-display-block {
+    display: block;
+}
+
+.todo-margin-vertical {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.todo-max-width{
+    width: 100%;
+}
+
+.todo-tasklist {
+    width: 70%;
+}
+
+.todo-filterbox {
+    width: 30%;
+}
+
+.todo-button-default {
+
+}
