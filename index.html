@@ -14,13 +14,13 @@
     <div class="todo-container">
         <h1 class="todo-centered">To Do List</h1>
         <h3>All Task</h3>
-        <input type="text" id="searchbox" class="todo-display-block todo-max-width todo-margin-vertical todo-height-default" placeholder="Search For Tasks" />
+        <input type="text" id="searchbox" oninput="listener.searchBoxInputEvent()" class="todo-display-block todo-max-width todo-margin-vertical todo-height-default" placeholder="Search For Tasks" />
         <div class="todo-row">
             <div class="todo-tasklist" id="todo-tasklist"></div>
             <div class="todo-hidden" id="task-form">
-                <form action="javascript:listener.saveTaskButtonClickEvent()">
+                <form id="input-form" action="javascript:listener.saveTaskButtonClickEvent()">
                     <p>Title:</p>
-                    <input type="text" name="title" id="todo-title">
+                    <input type="text" name="title" id="todo-title" required>
                     <p>Description:</p>
                     <textarea type="text" name="description" id="todo-description"></textarea>
                     <input type="submit" value="Submit">
@@ -30,9 +30,9 @@
                 <input type="button" id="newtask" class="todo-button-default todo-display-block todo-margin-vertical todo-height-default" value="New Task" onclick="listener.newTaskButtonClickEvent()" />
                 <form name="filterform" class="todo-radiofilter" id="todo-radiofilter">
                     <h4>Filter List</h4>
-                    <input type="radio" name="filter" value="all" checked> All<br />
-                    <input type="radio" name="filter" value="pending"> Pending<br />
-                    <input type="radio" name="filter" value="done"> Done<br />
+                    <input type="radio" onclick="listener.radioButtonClickEvent()" name="filter" value="all" checked> All<br />
+                    <input type="radio" onclick="listener.radioButtonClickEvent()" name="filter" value="pending"> Pending<br />
+                    <input type="radio" onclick="listener.radioButtonClickEvent()" name="filter" value="done"> Done<br />
                 </form>
             </aside>
         </div>

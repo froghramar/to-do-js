@@ -20,6 +20,12 @@
         this.newTaskButtonClickEvent = function () {
             controller.controllNewTask();
         }
+        this.searchBoxInputEvent = function () {
+            controller.controllSeachBoxInputEffect();
+        }
+        this.radioButtonClickEvent = function () {
+            controller.controllRadioButtonEffect();
+        }
     }
     window.listener = new Listener();
 }

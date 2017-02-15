@@ -133,6 +133,13 @@
                 }
             }
         }
+        this.fillOutInputField = function (title, description) {
+            document.getElementById('todo-title').value = title;
+            document.getElementById('todo-description').value = description;
+        }
+        this.resetInputForm = function () {
+            document.getElementById('input-form').reset();
+        }
     }
     window.domManager = new DomManager();
 }

@@ -6,6 +6,8 @@
         this.controllEditTask = function (id) {
             mode = 'edit';
             editId = id;
+            var task = repository.getTaskById(id);
+            domManager.fillOutInputField(task.title, task.description);
             domManager.showToggledView();
         }
         this.controllDeleteTask = function (id) {
@@ -34,14 +36,26 @@
         }
         this.controllNewTask = function () {
             mode = 'add';
+            domManager.resetInputForm();
             domManager.showToggledView();
         }
         this.getFilteredList = function () {
             var searchKey = domManager.getSearchKey();
             var filter = domManager.getFilterValue();
             var tasklist = repository.getAllTask();
-            var filteredList = tasklist;
+            var filteredList = {};
+            for (var id in tasklist) {
+                var task = tasklist[id];
+                if ((task.title.includes(searchKey) || task.description.includes(searchKey))  && filter.indexOf(task.status) != -1)
+                    filteredList[id] = tasklist[id];
+            }
             return filteredList;
+        }
+        this.controllSeachBoxInputEffect = function () {
+            domManager.updateView();
+        }
+        this.controllRadioButtonEffect = function () {
+            domManager.updateView();
         }
         this.init = function () {
             domManager.updateView();

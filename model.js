@@ -35,6 +35,9 @@
         this.getAllTask = function () {
             return tasklist;
         }
+        this.getTaskById = function (id) {
+            return tasklist[id];
+        }
         this.getMaxId = function () {
             var maxId = 0;
             for (var id in tasklist) {
