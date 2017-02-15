@@ -14,51 +14,22 @@
     <div class="todo-container">
         <h1 class="todo-centered">To Do List</h1>
         <h3>All Task</h3>
-        <input type="text" class="todo-display-block todo-max-width todo-margin-vertical todo-height-default" placeholder="Search For Tasks" />
+        <input type="text" id="searchbox" class="todo-display-block todo-max-width todo-margin-vertical todo-height-default" placeholder="Search For Tasks" />
         <div class="todo-row">
-            <div class="todo-tasklist" id="todo-tasklist">
-                <div class="todo-task todo-box-bordered" data-task-id="1">
-                    <todo-task-title>title1</todo-task-title>
-                    <input type="button" value="X" onclick="listener.deleteButtonClickEvent(this)" />
-                    <input type="button" value="..." onclick="listener.editButtonClickEvent(this)" />
-                    <input type="checkbox" onclick="listener.checkboxButtonClickEvent(this)" />
-                    <todo-task-description>description1</todo-task-description>
-                </div>
-                <div class="todo-task todo-box-bordered" data-task-id="2">
-                    <todo-task-title>title2</todo-task-title>
-                    <input type="button" value="X" onclick="del(this)" />
-                    <input type="button" value="..." onclick="edit(this)" />
-                    <input type="checkbox" onclick="check(this)" />
-                    <todo-task-description>description2</todo-task-description>
-                </div>
-                <div class="todo-task todo-box-bordered todo-task-done" data-task-id="3">
-                    <todo-task-title>title3</todo-task-title>
-                    <input type="button" value="X" onclick="del(this)" />
-                    <input type="button" value="..." onclick="edit(this)" />
-                    <input type="checkbox" onclick="check(this)" />
-                    <todo-task-description>description3</todo-task-description>
-                </div>
-                <div class="todo-task todo-box-bordered" data-task-id="4">
-                    <todo-task-title>title4</todo-task-title>
-                    <input type="button" value="X" onclick="del(this)" />
-                    <input type="button" value="..." onclick="edit(this)" />
-                    <input type="checkbox" onclick="check(this)" />
-                    <todo-task-description>description4</todo-task-description>
-                </div>
-            </div>
-            <div class="todo-hidden">
-                <form action="javascript:listener.addTaskButtonClickEvent()">
+            <div class="todo-tasklist" id="todo-tasklist"></div>
+            <div class="todo-hidden" id="task-form">
+                <form action="javascript:listener.saveTaskButtonClickEvent()">
                     <p>Title:</p>
                     <input type="text" name="title" id="todo-title">
                     <p>Description:</p>
                     <textarea type="text" name="description" id="todo-description"></textarea>
-                    <input type="submit" value="Add Task">
+                    <input type="submit" value="Submit">
                 </form> 
             </div>
             <aside class="todo-sidebar todo-box-bordered">
-                <input type="button" class="todo-button-default todo-display-block todo-margin-vertical todo-height-default" value="New Task" />
-                <h4>Filter List</h4>
-                <form name="filterform" class="todo-radiofilter">
+                <input type="button" id="newtask" class="todo-button-default todo-display-block todo-margin-vertical todo-height-default" value="New Task" onclick="listener.newTaskButtonClickEvent()" />
+                <form name="filterform" class="todo-radiofilter" id="todo-radiofilter">
+                    <h4>Filter List</h4>
                     <input type="radio" name="filter" value="all" checked> All<br />
                     <input type="radio" name="filter" value="pending"> Pending<br />
                     <input type="radio" name="filter" value="done"> Done<br />

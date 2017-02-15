@@ -14,8 +14,11 @@
             var id = domManager.getTaskIdFromTask(item.parentNode);
             controller.controllStatusChange(id);
         }
-        this.addTaskButtonClickEvent = function () {
-            controller.controllAddTask();
+        this.saveTaskButtonClickEvent = function () {
+            controller.controllSaveTask();
+        }
+        this.newTaskButtonClickEvent = function () {
+            controller.controllNewTask();
         }
     }
     window.listener = new Listener();

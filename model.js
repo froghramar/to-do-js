@@ -1,19 +1,9 @@
 ﻿(function (window) {
     'use strict';
-    var taskTitle, taskDescription, taskStatus;
     function Task(title, description, status){
-        taskTitle = title;
-        taskDescription = description;
-        taskStatus = status;
-        this.getTitle = function () {
-            return taskTitle;
-        }
-        this.getDescription = function () {
-            return taskDescription;
-        }
-        this.getStatus = function () {
-            return taskStatus;
-        }
+        this.title = title;
+        this.description = description;
+        this.status = status;
     }
     window.Task = Task;
 }
@@ -23,10 +13,24 @@
     'use strict';
     var tasklist = {};
     function Repository() {
-        this.addTask = function(title, description, status){
+        this.addTask = function(title, description){
             var newId = this.getMaxId() + 1;
-            var task = new Task(title, description, status);
+            var task = new Task(title, description, false);
             tasklist[String(newId)] = task;
+            this.updateLocalStorage();
+        }
+        this.updateTask = function (id, title, description) {
+            var task = new Task(title, description, tasklist[id].status);
+            tasklist[id] = task;
+            this.updateLocalStorage();
+        }
+        this.deleteTask = function (id) {
+            delete tasklist[id];
+            this.updateLocalStorage();
+        }
+        this.changeStatus = function (id) {
+            tasklist[id].status = !tasklist[id].status;
+            this.updateLocalStorage();
         }
         this.getAllTask = function () {
             return tasklist;
@@ -35,14 +39,17 @@
             var maxId = 0;
             for (var id in tasklist) {
                 if (parseInt(id) > maxId) {
-                    maxId = id;
+                    maxId = parseInt(id);
                 }
             }
             return maxId;
         }
         this.cloneFromLocalStorage = function () {
             if (localStorage.getItem("to-do-js") === null) return;
-            taskList = JSON.parse(localStorage.getItem("to-do-js"));
+            tasklist = JSON.parse(localStorage.getItem("to-do-js"));
+        }
+        this.updateLocalStorage = function () {
+            localStorage.setItem('to-do-js', JSON.stringify(tasklist));
         }
         this.cloneFromLocalStorage();
     }
