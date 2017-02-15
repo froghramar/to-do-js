@@ -16,7 +16,7 @@
         <h3>All Task</h3>
         <input type="text" class="todo-display-block todo-max-width todo-margin-vertical todo-height-default" placeholder="Search For Tasks" />
         <div class="todo-row">
-            <div class="todo-tasklist">
+            <div class="todo-tasklist" id="todo-tasklist">
                 <div class="todo-task todo-box-bordered" data-task-id="1">
                     <todo-task-title>title1</todo-task-title>
                     <input type="button" value="X" onclick="listener.deleteButtonClickEvent(this)" />
@@ -45,6 +45,15 @@
                     <input type="checkbox" onclick="check(this)" />
                     <todo-task-description>description4</todo-task-description>
                 </div>
+            </div>
+            <div class="todo-hidden">
+                <form action="javascript:listener.addTaskButtonClickEvent()">
+                    <p>Title:</p>
+                    <input type="text" name="title" id="todo-title">
+                    <p>Description:</p>
+                    <textarea type="text" name="description" id="todo-description"></textarea>
+                    <input type="submit" value="Add Task">
+                </form> 
             </div>
             <aside class="todo-sidebar todo-box-bordered">
                 <input type="button" class="todo-button-default todo-display-block todo-margin-vertical todo-height-default" value="New Task" />

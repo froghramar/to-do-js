@@ -10,6 +10,11 @@
         this.controllStatusChange = function (id) {
             alert('check ' + id);
         }
+        this.controllAddTask = function () {
+            var title = document.getElementById('todo-title').value;
+            var description = document.getElementById('todo-description').value;
+            alert(description);
+        }
     }
     window.controller = new Controller();
 }

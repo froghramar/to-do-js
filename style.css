@@ -42,6 +42,7 @@
 
 .todo-tasklist {
     width: 70%;
+    display: none;
 }
 
 .todo-sidebar {
@@ -82,4 +83,18 @@
 
 .todo-task-done{
     background-color: #e6e6e6;
+}
+
+.todo-hidden{
+    width: 70%;
+}
+
+.todo-hidden > form > input, .todo-hidden > form > textarea {
+    width: 100%;
+    display: block;
+}
+
+.todo-hidden > form > input[type='submit'] {
+    margin-top: 30px;
+    width: 100px;
 }
