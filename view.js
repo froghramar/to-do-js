@@ -51,9 +51,8 @@
             var description = document.getElementById('todo-description').value;
             return description;
         }
-        this.updateView = function () {
+        this.updateView = function (tasklist) {
             document.getElementById('todo-tasklist').innerHTML = "";
-            var tasklist = controller.getFilteredList();
             for (var id in tasklist) {
                 var domTask = this.getDomTask(id, tasklist[id]);
                 document.getElementById('todo-tasklist').appendChild(domTask);

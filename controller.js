@@ -13,31 +13,31 @@
         this.controllDeleteTask = function (id) {
             if (confirm("Are You Sure?")) {
                 repository.deleteTask(id);
-                domManager.updateView();
+                domManager.updateView(this.getFilteredList());
             }
         }
         this.controllStatusChange = function (id) {
             repository.changeStatus(id);
-            domManager.updateView();
+            domManager.updateView(this.getFilteredList());
         }
         this.controllSaveTask = function () {
             var title = domManager.getTitleFromInputField();
             var description = domManager.getDescriptionFromInputField();
             if (mode === 'add') {
                 repository.addTask(title, description);
-                domManager.updateView();
+                domManager.updateView(this.getFilteredList());
             }
             else if (mode === 'edit') {
                 repository.updateTask(editId, title, description);
-                domManager.updateView();
+                domManager.updateView(this.getFilteredList());
             }
             mode = 'taskview';
-            domManager.showMainView();
+            domManager.showMainView(this.getFilteredList());
         }
         this.controllNewTask = function () {
             mode = 'add';
             domManager.resetInputForm();
-            domManager.showToggledView();
+            domManager.showToggledView(this.getFilteredList());
         }
         this.getFilteredList = function () {
             var searchKey = domManager.getSearchKey();
@@ -52,13 +52,13 @@
             return filteredList;
         }
         this.controllSeachBoxInputEffect = function () {
-            domManager.updateView();
+            domManager.updateView(this.getFilteredList());
         }
         this.controllRadioButtonEffect = function () {
-            domManager.updateView();
+            domManager.updateView(this.getFilteredList());
         }
         this.init = function () {
-            domManager.updateView();
+            domManager.updateView(this.getFilteredList());
         }
     }
     window.controller = new Controller();
