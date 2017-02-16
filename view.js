@@ -59,7 +59,6 @@
                 document.getElementById('todo-tasklist').appendChild(domTask);
                 taskToShow = true;
             }
-            console.log(taskToShow);
             if (taskToShow == false) {
                 document.getElementById('todo-tasklist').innerHTML = "[ Oops! No Task Found. ]";
             }

@@ -97,3 +97,13 @@
     margin-top: 30px;
     width: 100px;
 }
+
+#input-form > p {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 450px) {
+    .todo-tasklist, .todo-sidebar, .todo-hidden {
+        width: 100%;
+    }
+}

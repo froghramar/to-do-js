@@ -16,7 +16,6 @@
         <h3>All Task</h3>
         <input type="text" id="searchbox" oninput="listener.searchBoxInputEvent()" class="todo-display-block todo-max-width todo-margin-vertical todo-height-default" placeholder="Search For Tasks" />
         <div class="todo-row">
-            <div class="todo-tasklist" id="todo-tasklist"></div>
             <div class="todo-hidden" id="task-form">
                 <form id="input-form" action="javascript:listener.saveTaskButtonClickEvent()">
                     <p>Title:</p>
@@ -35,6 +34,7 @@
                     <input type="radio" onclick="listener.radioButtonClickEvent()" name="filter" value="done"> Done<br />
                 </form>
             </aside>
+            <div class="todo-tasklist" id="todo-tasklist"></div>
         </div>
     </div>
 </body>
