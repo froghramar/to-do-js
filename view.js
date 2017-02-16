@@ -53,9 +53,15 @@
         }
         this.updateView = function (tasklist) {
             document.getElementById('todo-tasklist').innerHTML = "";
+            var taskToShow = false;
             for (var id in tasklist) {
                 var domTask = this.getDomTask(id, tasklist[id]);
                 document.getElementById('todo-tasklist').appendChild(domTask);
+                taskToShow = true;
+            }
+            console.log(taskToShow);
+            if (taskToShow == false) {
+                document.getElementById('todo-tasklist').innerHTML = "[ Oops! No Task Found. ]";
             }
         }
         this.createTaskTitle = function (title) {
